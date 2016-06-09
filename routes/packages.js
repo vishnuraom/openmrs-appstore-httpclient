@@ -6,7 +6,8 @@ router.get('/', function(req, res, next) {
        request.get({ url: "https://api.bintray.com/repos/vishnuraom/omod/packages"},
        function(error, response, body) {
               if (!error && response.statusCode == 200) {
-                res.json(body);
+                var obj = JSON.parse(body);
+                res.json(obj);
                 }
               });
 });
