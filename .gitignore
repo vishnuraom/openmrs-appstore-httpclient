@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules
+
+### IntelliJ Idea ###
+*.iml
+*.ipr
+*.iws
+.idea/
