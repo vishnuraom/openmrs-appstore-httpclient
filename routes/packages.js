@@ -4,6 +4,8 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
       var repo = req.query['repo'].toLowerCase();
+      console.log(repo);
+      console.log(repo);
       request.get({ url: "https://api.bintray.com/repos/vishnuraom/"+repo+"/packages"},
       function(error, response, body) {
             if (!error && response.statusCode == 200) {
