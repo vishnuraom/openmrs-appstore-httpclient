@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 
 var packages =require('./routes/packages')
 var details =require('./routes/details')
+var repositories =require('./routes/repositories')
+var packagefiles =require('./routes/packagefiles')
 
 var app = express();
 
@@ -16,5 +18,7 @@ app.use(function(req, res, next) {
 app.use(favicon(path.join('public', 'images','favicon.ico')));
 app.use('/packages', packages);
 app.use('/details', details);
+app.use('/repositories', repositories);
+app.use('/packagefiles', packagefiles);
 
 module.exports = app;
