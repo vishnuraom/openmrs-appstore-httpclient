@@ -1,4 +1,6 @@
 var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
 
 var packages =require('./routes/packages')
 var details =require('./routes/details')
@@ -11,6 +13,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(favicon(path.join('public', 'images','favicon.ico')));
 app.use('/packages', packages);
 app.use('/details', details);
 
