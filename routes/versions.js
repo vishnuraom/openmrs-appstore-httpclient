@@ -14,7 +14,8 @@ router.get('/', function(req, res, next) {
   function make_url(){
           var repo = req.query['repo'],
               package = req.query['name'],
-              url = "https://api.bintray.com/packages/vishnuraom/" + repo + "/" + package;
+              version = req.query['version'],
+              url = "https://api.bintray.com/packages/vishnuraom/" + repo + "/" + package + "/versions/" + version;
           return url;
   }
 

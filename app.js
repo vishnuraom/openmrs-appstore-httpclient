@@ -6,6 +6,7 @@ var packages =require('./routes/packages')
 var details =require('./routes/details')
 var repositories =require('./routes/repositories')
 var packagefiles =require('./routes/packagefiles')
+var versions =require('./routes/versions')
 
 var app = express();
 
@@ -20,5 +21,6 @@ app.use('/packages', packages);
 app.use('/details', details);
 app.use('/repositories', repositories);
 app.use('/packagefiles', packagefiles);
+app.use('/versions', versions);
 
 module.exports = app;

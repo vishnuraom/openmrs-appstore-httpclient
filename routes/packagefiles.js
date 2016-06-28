@@ -25,8 +25,6 @@ router.get('/', function(req, res, next) {
   };
 
   function callback(error, response, body) {
-    console.log("in callback function");
-    console.log(response.statusCode);
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
       res.json(obj);
