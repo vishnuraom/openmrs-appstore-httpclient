@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
     var repo = req.query['repo'],
         package = req.query['name'];
     request({
-        url: 'https://' + 'vishnuraom' + ':' + '89e2163f8ed29dc79356ed122639543b087b735e' + "@api.bintray.com/packages/vishnuraom/" + repo + "/" + package,
+        url: 'https://' + process.env.BINTRAY_USERNAME + ':' + process.env.BINTRAY_APIKEY + '@api.bintray.com/packages/' + process.env.BINTRAY_USERNAME + '/' + repo + '/' + package,
     }, function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var obj = JSON.parse(body);

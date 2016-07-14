@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
     var repo = req.query['repo'];
     var file_path = req.query['filepath'];
     request.get({
-            url: "https://dl.bintray.com/vishnurao/" + repo + "/" + file_path
+            url: 'https://dl.bintray.com/' + process.env.BINTRAY_USERNAME + repo + '/' + file_path
         },
         function(error, response, body) {
             if (!error && response.statusCode == 200) {

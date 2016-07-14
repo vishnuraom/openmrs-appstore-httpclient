@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     var repo = req.query['repo'];
     request.get({
-            url: "https://api.bintray.com/repos/vishnuraom/" + repo + "/packages"
+            url: 'https://api.bintray.com/repos/' + process.env.BINTRAY_USERNAME + '/' + repo + '/packages'
         },
         function(error, response, body) {
             if (!error && response.statusCode == 200) {

@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
     function getDetails(name, callback) {
         request({
-            url: 'https://' + 'vishnuraom' + ':' + '89e2163f8ed29dc79356ed122639543b087b735e' + "@api.bintray.com/packages/vishnuraom/" + repo + "/" + name,
+            url: 'https://' + process.env.BINTRAY_USERNAME + ':' + process.env.BINTRAY_APIKEY + '@api.bintray.com/packages/' + process.env.BINTRAY_USERNAME + '/' + repo + '/' + name,
         }, function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 var info = JSON.parse(body);
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
         });
     }
     request.get({
-            url: "https://api.bintray.com/repos/vishnuraom/" + repo + "/packages"
+            url: 'https://api.bintray.com/repos/' + process.env.BINTRAY_USERNAME + '/' + repo + '/packages'
         },
         function(error, response, body) {
             if (!error && response.statusCode == 200) {
