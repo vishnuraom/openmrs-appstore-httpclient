@@ -9,6 +9,7 @@ var details = require('./routes/details')
 var repositories = require('./routes/repositories')
 var packagefiles = require('./routes/packagefiles')
 var alldetails = require('./routes/alldetails')
+var search = require('./routes/search')
 
 var app = express();
 
@@ -24,5 +25,6 @@ app.use('/details', details);
 app.use('/repositories', repositories);
 app.use('/packagefiles', packagefiles);
 app.use('/alldetails', alldetails);
+app.use('/search', search);
 
 module.exports = app;
